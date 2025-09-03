@@ -16,10 +16,10 @@ import 'package:hack2025_mobile_app/login/screens/login_screen.dart';
 //   runApp(MyApp(settingsController: settingsController));
 // }
 
-void main() => runApp(const MyApp());
+void main() => runApp(const Readable());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Readable extends StatelessWidget {
+  const Readable({super.key});
 
   @override
   Widget build(BuildContext context) {
