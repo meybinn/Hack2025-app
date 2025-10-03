@@ -4,7 +4,8 @@ import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
 import 'package:hack2025_mobile_app/commons/constant/sizes.dart';
 import 'package:hack2025_mobile_app/commons/themes.dart';
 import 'package:hack2025_mobile_app/home/screens/home_screen.dart';
-import 'package:hack2025_mobile_app/regist/widget/checkBox.dart';
+import 'package:hack2025_mobile_app/widgets/checkBox.dart';
+import 'package:hack2025_mobile_app/widgets/userInterests.dart';
 
 class Userinterestscreen extends StatefulWidget {
   const Userinterestscreen({super.key});
@@ -55,15 +56,7 @@ void _onBackTap() {
           ],
         ),
             ),
-          Container(
-            padding:const EdgeInsets.symmetric(vertical: Sizes.size24, horizontal: Sizes.size18),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.white, width: 5),
-            ),
-            child: const Column(
-              children: [InterestCheckbox()],
-            )
-          ),
+          const Userinterests(),
           Gaps.v16,
            GestureDetector(
                 onTap: _onNextTap,

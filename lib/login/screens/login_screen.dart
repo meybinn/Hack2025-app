@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
-import 'package:hack2025_mobile_app/login/widgets/login_button.dart';
+import 'package:hack2025_mobile_app/widgets/login_button.dart';
 import 'package:hack2025_mobile_app/login/screens/kakao_login_screen.dart';
 import 'package:hack2025_mobile_app/login/screens/naver_login_screen.dart';
 

@@ -3,7 +3,7 @@ import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
 import 'package:hack2025_mobile_app/commons/themes.dart';
 import 'package:hack2025_mobile_app/login/screens/login_screen.dart';
 import 'package:hack2025_mobile_app/login/screens/naver_login_screen.dart';
-import 'package:hack2025_mobile_app/login/widgets/login_container.dart';
+import 'package:hack2025_mobile_app/widgets/login_container.dart';
 
 class KakaoLoginScreen extends StatefulWidget {
   const KakaoLoginScreen({super.key});

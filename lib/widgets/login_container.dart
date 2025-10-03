@@ -62,7 +62,7 @@ class LoginContainer extends StatelessWidget {
                 gapPadding: Sizes.size2,
               ),
             ),
-          ),
+          ), 
         ),
       ],
     );

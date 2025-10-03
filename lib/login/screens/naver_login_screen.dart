@@ -4,7 +4,7 @@ import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
 import 'package:hack2025_mobile_app/commons/themes.dart';
 import 'package:hack2025_mobile_app/login/screens/kakao_login_screen.dart';
 import 'package:hack2025_mobile_app/login/screens/login_screen.dart';
-import 'package:hack2025_mobile_app/login/widgets/login_container.dart';
+import 'package:hack2025_mobile_app/widgets/login_container.dart';
 import 'package:hack2025_mobile_app/regist/userInfoScreen.dart';
 
 class NaverLoginScreen extends StatefulWidget {
