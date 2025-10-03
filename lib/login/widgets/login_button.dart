@@ -26,11 +26,10 @@ class LoginButton extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * 0.95,
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(8)),
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
               color: way == "네이버 로그인"
                   ? Themes.naver_background
-                  : Themes.kakao_background
-            ),
+                    : Themes.kakao_background),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
               child: Text(
