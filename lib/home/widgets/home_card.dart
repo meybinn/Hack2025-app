@@ -18,7 +18,7 @@ class HomeCard extends StatelessWidget{
     this.textColor = Colors.black, 
     this.onTap, 
     required this.iconAsset, 
-    this.iconSize = 28,
+    this.iconSize = 28, 
     });
   
   @override

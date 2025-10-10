@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack2025_mobile_app/home/screens/home_screen.dart';
+import 'package:hack2025_mobile_app/levels/screens/level_screen.dart';
 import 'package:hack2025_mobile_app/login/screens/login_screen.dart';
 
 void main() => runApp(const Readable());
@@ -20,6 +21,7 @@ class Readable extends StatelessWidget {
       title: 'My App',
       //home: const LoginScreen(),
       home: const HomeScreen(),
+      //home: const LevelScreen(),
     );
   }
 

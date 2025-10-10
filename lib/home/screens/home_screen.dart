@@ -3,6 +3,7 @@ import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
 import 'package:hack2025_mobile_app/home/widgets/connected_button.dart';
 import 'package:hack2025_mobile_app/home/widgets/home_card.dart';
 import 'package:hack2025_mobile_app/home/widgets/progress_bar.dart';
+import 'package:hack2025_mobile_app/levels/screens/level_screen.dart';
 
 class HomeScreen extends StatelessWidget{
   
@@ -59,26 +60,34 @@ class HomeScreen extends StatelessWidget{
                   crossAxisSpacing: 30,     //for setting space of the side grid card
                   mainAxisSpacing: 55,      //for setting space between mid-space of grid card
                   physics: NeverScrollableScrollPhysics(),
-                    children: const[
+                    children: [
                       HomeCard(
                         title: '학습 시작', 
                         iconAsset:
                           'assets/images/books_icon.png',
                           iconSize: 0.28,
-                          bgColor: Colors.white, 
-                          textColor: Colors.black,
+                          //bgColor: Colors.white, 
+                          //textColor: Colors.black, 
+                          onTap: () { 
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(
+                                builder: (_) => const LevelScreen(),
+                                ),
+                              );
+                          }, 
                         ),
-                      HomeCard(
+                      const HomeCard(
                         title: '레벨 테스트', 
                         iconAsset: 'assets/images/pencil_icon.png',
                         iconSize: 0.28,
                         ),
-                      HomeCard(
+                      const HomeCard(
                         title: '커뮤니티', 
                         iconAsset: 'assets/images/community_icon.png',
                         iconSize: 0.28,
                         ),
-                      HomeCard(
+                      const HomeCard(
                         title: '설정', 
                         iconAsset: 'assets/images/setting_icon.png',
                         iconSize: 0.28,
