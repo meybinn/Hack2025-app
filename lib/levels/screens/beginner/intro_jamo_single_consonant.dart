@@ -20,9 +20,9 @@ class _IntroJamoSingleConsonantState extends State<IntroJamoSingleConsonant> {
 
   @override
   void initState() {
-    super.initState();                         // ✅ wajib
-    _tts.awaitSpeakCompletion(true);           // ✅ tunggu selesai
-    _tts.setCompletionHandler(() {             // ✅ pindah setelah selesai
+    super.initState();                         
+    _tts.awaitSpeakCompletion(true);           
+    _tts.setCompletionHandler(() {             
       if (!mounted || _navigated) return;
       _navigated = true;
       Navigator.of(context).pushReplacement(
@@ -35,14 +35,14 @@ class _IntroJamoSingleConsonantState extends State<IntroJamoSingleConsonant> {
     if (_isSpeaking) return;
     setState(() => _isSpeaking = true);
     try {
-      await _tts.stop();                       // bersihkan antrian
+      await _tts.stop();                       
       await _tts.setLanguage('ko-KR');
       await _tts.setSpeechRate(0.45);
       await _tts.setPitch(1.0);
       await _tts.setVolume(1.0);
-      await _tts.speak(_introText);            // selesai → handler navigate
+      await _tts.speak(_introText);            
     } catch (_) {
-      // fallback: kalau TTS gagal, tetap lanjut
+      
       if (!mounted || _navigated) return;
       _navigated = true;
       Navigator.of(context).pushReplacement(
@@ -53,7 +53,7 @@ class _IntroJamoSingleConsonantState extends State<IntroJamoSingleConsonant> {
 
   @override
   void dispose() {
-    _tts.stop();                               // jangan _tts.dispose()
+    _tts.stop();                               
     super.dispose();
   }
 
