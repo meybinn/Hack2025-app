@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/intro_jamo_vowel.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/jamo_lesson/vowel_lesson1.dart';
 
-class JamoVowel extends StatelessWidget{
-  
+class JamoVowel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,9 @@ class JamoVowel extends StatelessWidget{
                         height: 1.5,
                       ),
                     ),
-                    SizedBox(height: 36,),
+                    SizedBox(
+                      height: 36,
+                    ),
                   ],
                 ),
               ),
@@ -38,7 +41,14 @@ class JamoVowel extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const IntroJamoVowel(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
@@ -54,7 +64,9 @@ class JamoVowel extends StatelessWidget{
                 ),
               ),
             ),
-            const SizedBox(height: 150,),
+            const SizedBox(
+              height: 150,
+            ),
 
             Padding(
               padding: const EdgeInsets.only(left: 22, right: 22, bottom: 22),
@@ -63,40 +75,41 @@ class JamoVowel extends StatelessWidget{
                 child: SizedBox(
                   height: 90,
                   width: 300,
-                    child: ElevatedButton(
-                      onPressed: () => Navigator.pop(context),
+                  child: ElevatedButton(
+                    onPressed: () => Navigator.pop(context),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF75B7B3),
                       foregroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                  child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.reply,
-                      size: 50,
                       ),
-                    SizedBox(
-                      width: 30,
                     ),
-                    Text(
-                      '돌아가기',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.w600,
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.reply,
+                          size: 50,
                         ),
-                      ),
-                    ],
-                  ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Text(
+                          '돌아가기',
+                          style: TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          const SizedBox(height: 80,),
-
+            const SizedBox(
+              height: 80,
+            ),
           ],
         ),
       ),
