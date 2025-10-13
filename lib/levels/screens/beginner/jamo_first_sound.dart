@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/intro_jamo_single_consonant.dart';
 
 class JamoFirstSound extends StatelessWidget{
   
@@ -38,7 +39,14 @@ class JamoFirstSound extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                        Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (_) => IntroJamoSingleConsonant(),
+                            ),
+                            );
+                      },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
