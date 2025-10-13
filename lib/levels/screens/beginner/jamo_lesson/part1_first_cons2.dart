@@ -6,12 +6,12 @@ class Part1FirstCons2 extends StatefulWidget {
   const Part1FirstCons2({
     super.key,
   });
-  
+
   @override
   State<Part1FirstCons2> createState() => _Part1FirstConsState();
 }
 
-class  _Part1FirstConsState extends State<Part1FirstCons2> {
+class _Part1FirstConsState extends State<Part1FirstCons2> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
@@ -23,15 +23,15 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
   static const Color _dotOn = Colors.white;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _autoSpeak();
   }
 
   Future<void> _autoSpeak() async {
-    if(_isSpeaking) return;
+    if (_isSpeaking) return;
     _isSpeaking = true;
-    try{
+    try {
       await _tts.stop();
       await _tts.awaitSpeakCompletion(true);
       await _tts.setLanguage("ko-KR");
@@ -39,23 +39,28 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
       await _tts.setPitch(1.0);
       await _tts.setVolume(1.0);
       await _tts.speak(_utterance);
-    } catch(_) {}
+    } catch (_) {}
   }
 
   Future<void> _quizPop() {
     return showGeneralDialog(
-      context: context, 
+      context: context,
       barrierDismissible: true,
       barrierLabel: "퀴즈",
       barrierColor: Colors.black.withOpacity(0.6),
       transitionDuration: const Duration(milliseconds: 180),
-      pageBuilder: (context, anim, secAnim){
+      pageBuilder: (context, anim, secAnim) {
         return Center(
           child: Material(
             color: Colors.transparent,
             child: Container(
               width: 330,
-              padding: const EdgeInsets.fromLTRB(28, 65, 28, 28,),
+              padding: const EdgeInsets.fromLTRB(
+                28,
+                65,
+                28,
+                28,
+              ),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -63,10 +68,14 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.menu_book_rounded,
-                  size: 80,
-                  color: Colors.blue,),
-                  const SizedBox(height: 40,),
+                  Icon(
+                    Icons.menu_book_rounded,
+                    size: 80,
+                    color: Colors.blue,
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
                   const Text(
                     "퀴즈 시간",
                     style: TextStyle(
@@ -75,7 +84,9 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   SizedBox(
                     width: 170,
                     height: 80,
@@ -89,9 +100,9 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
                         ),
                         elevation: 0,
                       ),
-                      onPressed: (){
+                      onPressed: () {
                         Navigator.of(context).pop();
-                      }, 
+                      },
                       child: const Text(
                         "시작",
                         style: TextStyle(
@@ -99,7 +110,7 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      ),
+                    ),
                   ),
                 ],
               ),
@@ -107,45 +118,51 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
           ),
         );
       },
-      );
+    );
   }
 
-   @override
+  @override
   void dispose() {
-    _tts.stop();                               // jangan _tts.dispose()
+    _tts.stop(); // jangan _tts.dispose()
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
-   final List<bool> dots = [true, true, false, false, false, false];
+    final List<bool> dots = [true, true, false, false, false, false];
 
-   return Scaffold(
-    backgroundColor: Colors.black,
-    body: SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            const SizedBox(height: 60,),
-            const Icon(
-              Icons.volume_up_outlined, 
-              color: Color(0xFFFFFF00),
-              size: 70,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 60,
               ),
-              const SizedBox(height: 90,),
+              const Icon(
+                Icons.volume_up_outlined,
+                color: Color(0xFFFFFF00),
+                size: 70,
+              ),
+              const SizedBox(
+                height: 90,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   BrailleCell(
-                    active: [true, true, false, false, false, false], 
-                    onColor: _dotOn, 
+                    active: [true, true, false, false, false, false],
+                    onColor: _dotOn,
                     offColor: _dotOff,
                     size: 40,
                     hgap: 40,
                     vgap: 30,
-                    ),
-                  const SizedBox(width: 70,),
+                  ),
+                  const SizedBox(
+                    width: 70,
+                  ),
                   Text(
                     "ㄴ",
                     style: TextStyle(
@@ -153,7 +170,7 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
                       fontWeight: FontWeight.w600,
                       color: _text,
                     ),
-                    ),
+                  ),
                 ],
               ),
               const Spacer(),
@@ -174,7 +191,7 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
                   child: const Text(
                     '다음',
                     style: TextStyle(
-                      fontSize: 36, 
+                      fontSize: 36,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -198,17 +215,17 @@ class  _Part1FirstConsState extends State<Part1FirstCons2> {
                   child: const Text(
                     '돌아가기',
                     style: TextStyle(
-                      fontSize: 36, 
+                      fontSize: 36,
                       fontWeight: FontWeight.w600,
-                      ),
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 40),
-          ],
-            ),
+            ],
+          ),
         ),
-        ),
-        );
+      ),
+    );
   }
 }

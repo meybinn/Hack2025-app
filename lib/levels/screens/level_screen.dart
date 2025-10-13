@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hack2025_mobile_app/levels/screens/beginner_level_screen.dart';
-import 'package:hack2025_mobile_app/levels/screens/intermediate_level_screen.dart';
+import 'package:hack2025_mobile_app/levels/screens/advanced/advanced_level_screen.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/beginner_level_screen.dart';
+import 'package:hack2025_mobile_app/levels/screens/intermediate/intermediate_level_screen.dart';
 import 'package:hack2025_mobile_app/levels/widgets/level_card.dart';
 
 class LevelScreen extends StatelessWidget{
@@ -71,7 +72,7 @@ class LevelScreen extends StatelessWidget{
                 Navigator.push(
                 context, 
                 MaterialPageRoute(
-                  builder: (_) => const IntermediateLevelScreen(),
+                  builder: (_) => const AdvancedLevelScreen(),
                   ),
                 );
               },

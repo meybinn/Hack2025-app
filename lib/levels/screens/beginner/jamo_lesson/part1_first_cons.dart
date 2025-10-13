@@ -7,12 +7,12 @@ class Part1FirstCons extends StatefulWidget {
   const Part1FirstCons({
     super.key,
   });
-  
+
   @override
   State<Part1FirstCons> createState() => _Part1FirstConsState();
 }
 
-class  _Part1FirstConsState extends State<Part1FirstCons> {
+class _Part1FirstConsState extends State<Part1FirstCons> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
@@ -24,15 +24,15 @@ class  _Part1FirstConsState extends State<Part1FirstCons> {
   static const Color _dotOn = Colors.white;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _autoSpeak();
   }
 
   Future<void> _autoSpeak() async {
-    if(_isSpeaking) return;
+    if (_isSpeaking) return;
     _isSpeaking = true;
-    try{
+    try {
       await _tts.stop();
       await _tts.awaitSpeakCompletion(true);
       await _tts.setLanguage("ko-KR");
@@ -40,45 +40,51 @@ class  _Part1FirstConsState extends State<Part1FirstCons> {
       await _tts.setPitch(1.0);
       await _tts.setVolume(1.0);
       await _tts.speak(_utterance);
-    } catch(_) {}
+    } catch (_) {}
   }
 
-   @override
+  @override
   void dispose() {
-    _tts.stop();                               // jangan _tts.dispose()
+    _tts.stop(); // jangan _tts.dispose()
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
-   final List<bool> dots = [false, true, false, false, false, false];
+    final List<bool> dots = [false, true, false, false, false, false];
 
-   return Scaffold(
-    backgroundColor: Colors.black,
-    body: SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            const SizedBox(height: 60,),
-            const Icon(
-              Icons.volume_up_outlined, 
-              color: Color(0xFFFFFF00),
-              size: 70,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 60,
               ),
-              const SizedBox(height: 90,),
+              const Icon(
+                Icons.volume_up_outlined,
+                color: Color(0xFFFFFF00),
+                size: 70,
+              ),
+              const SizedBox(
+                height: 90,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   BrailleCell(
-                    active: [false, true, false, false, false, false], 
-                    onColor: _dotOn, 
+                    active: [false, true, false, false, false, false],
+                    onColor: _dotOn,
                     offColor: _dotOff,
                     size: 40,
                     hgap: 40,
                     vgap: 30,
-                    ),
-                  const SizedBox(width: 70,),
+                  ),
+                  const SizedBox(
+                    width: 70,
+                  ),
                   Text(
                     "ㄱ",
                     style: TextStyle(
@@ -86,7 +92,7 @@ class  _Part1FirstConsState extends State<Part1FirstCons> {
                       fontWeight: FontWeight.w600,
                       color: _text,
                     ),
-                    ),
+                  ),
                 ],
               ),
               const Spacer(),
@@ -107,14 +113,15 @@ class  _Part1FirstConsState extends State<Part1FirstCons> {
                     if (_navigated) return;
                     _navigated = true;
                     Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => Part1FirstCons2(),
-                    ),
+                      MaterialPageRoute(
+                        builder: (_) => Part1FirstCons2(),
+                      ),
                     );
                   },
                   child: const Text(
                     '다음',
                     style: TextStyle(
-                      fontSize: 36, 
+                      fontSize: 36,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -138,17 +145,17 @@ class  _Part1FirstConsState extends State<Part1FirstCons> {
                   child: const Text(
                     '돌아가기',
                     style: TextStyle(
-                      fontSize: 36, 
+                      fontSize: 36,
                       fontWeight: FontWeight.w600,
-                      ),
+                    ),
                   ),
                 ),
               ),
               const SizedBox(height: 40),
-          ],
-            ),
+            ],
+          ),
         ),
-        ),
-        );
+      ),
+    );
   }
 }
