@@ -43,18 +43,21 @@ void _onBackTap() {
             "아래 정보를 입력해주세요!",
             style: TextStyle(
               color: Colors.white,
-              fontSize: MediaQuery.of(context).size.height * 0.035,
+              fontSize: MediaQuery.of(context).size.height * 0.04,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
-        const userInfo(),
+        const userInfo(
+          border: 1,
+        ),
         Gaps.v16,
          GestureDetector(
               onTap: _onNextTap,
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Themes.mint,
                 ),
                 child: Padding(
@@ -65,7 +68,8 @@ void _onBackTap() {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Themes.kakao_text,
-                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                  fontSize: MediaQuery.of(context).size.height * 0.04,
+                  fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
@@ -77,7 +81,7 @@ void _onBackTap() {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Themes.mint,
                 ),
                 child: Padding(
@@ -88,7 +92,8 @@ void _onBackTap() {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Themes.kakao_text,
-                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                  fontSize: MediaQuery.of(context).size.height * 0.04,
+                  fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),

@@ -97,7 +97,7 @@ class _NaverLoginScreenState extends State<NaverLoginScreen> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Themes.naver_background,
                 ),
                 child: Padding(
@@ -108,7 +108,8 @@ class _NaverLoginScreenState extends State<NaverLoginScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Themes.naver_text,
-                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                      fontSize: MediaQuery.of(context).size.height * 0.04,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
@@ -120,7 +121,7 @@ class _NaverLoginScreenState extends State<NaverLoginScreen> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Themes.naver_background,
                 ),
                 child: Padding(
@@ -131,7 +132,8 @@ class _NaverLoginScreenState extends State<NaverLoginScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Themes.naver_text,
-                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                      fontSize: MediaQuery.of(context).size.height * 0.04,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),

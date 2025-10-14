@@ -23,6 +23,10 @@ class LoginContainer extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.85,
           child: TextField(
+            style: TextStyle(
+                color: way == "naver"
+                    ? Themes.naver_background
+                    : Themes.kakao_text),
             controller: controller,
             decoration: InputDecoration(
               filled: true,

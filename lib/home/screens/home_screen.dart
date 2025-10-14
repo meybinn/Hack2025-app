@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
+import 'package:hack2025_mobile_app/community/community_screen.dart';
 import 'package:hack2025_mobile_app/home/widgets/connected_button.dart';
 import 'package:hack2025_mobile_app/home/widgets/home_card.dart';
 import 'package:hack2025_mobile_app/home/widgets/progress_bar.dart';
+import 'package:hack2025_mobile_app/setting/screen/settingScreen.dart';
 
 class HomeScreen extends StatelessWidget{
   
@@ -34,9 +36,9 @@ class HomeScreen extends StatelessWidget{
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-                ProgressBar(
+              const ProgressBar(
                   value: 0.05,
                   height: 18,
                   bgColor: Colors.white,
@@ -58,9 +60,9 @@ class HomeScreen extends StatelessWidget{
                   shrinkWrap: true,
                   crossAxisSpacing: 30,     //for setting space of the side grid card
                   mainAxisSpacing: 55,      //for setting space between mid-space of grid card
-                  physics: NeverScrollableScrollPhysics(),
-                    children: const[
-                      HomeCard(
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  const HomeCard(
                         title: '학습 시작', 
                         iconAsset:
                           'assets/images/books_icon.png',
@@ -68,17 +70,33 @@ class HomeScreen extends StatelessWidget{
                           bgColor: Colors.white, 
                           textColor: Colors.black,
                         ),
-                      HomeCard(
+                  const HomeCard(
                         title: '레벨 테스트', 
                         iconAsset: 'assets/images/pencil_icon.png',
                         iconSize: 0.28,
                         ),
                       HomeCard(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CommunityScreen(),
+                        ),
+                      );
+                    },
                         title: '커뮤니티', 
                         iconAsset: 'assets/images/community_icon.png',
                         iconSize: 0.28,
                         ),
-                      HomeCard(
+                  HomeCard(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Settingscreen(),
+                        ),
+                      );
+                    },
                         title: '설정', 
                         iconAsset: 'assets/images/setting_icon.png',
                         iconSize: 0.28,

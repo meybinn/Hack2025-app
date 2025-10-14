@@ -4,7 +4,8 @@ import 'package:hack2025_mobile_app/commons/constant/sizes.dart';
 import 'package:hack2025_mobile_app/widgets/selectGender.dart';
 
 class userInfo extends StatefulWidget {
-  const userInfo({super.key});
+  final int border;
+  const userInfo({super.key, required this.border});
 
   @override
   State<userInfo> createState() => _userInfoState();
@@ -12,8 +13,10 @@ class userInfo extends StatefulWidget {
 
 class _userInfoState extends State<userInfo> {
   final TextEditingController _idController = TextEditingController();
+  final TextEditingController _ageController = TextEditingController();
 
   String id = "";
+  String age = "";
 
   @override
   void initState() {
@@ -24,39 +27,50 @@ class _userInfoState extends State<userInfo> {
         id = _idController.text;
       });
     });
+
+    _ageController.addListener(() {
+      setState(() {
+        age = _ageController.text;
+      });
+    });
   }
 
   @override
   void dispose() {
     _idController.dispose();
+    _ageController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return // 전체 container
-        Container(
+    return Container(
       padding: const EdgeInsets.symmetric(
           vertical: Sizes.size24, horizontal: Sizes.size18),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white, width: 5),
+        border: widget.border == 1
+            ? Border.all(color: Colors.white, width: 5)
+            : null,
       ),
       child: Column(
         children: [
           // 아이디
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "아이디",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: MediaQuery.of(context).size.height * 0.03,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Gaps.h24,
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.425,
-                child: TextField(
+                child: TextField(  
+                  style: const TextStyle(color: Colors.black),
                   controller: _idController,
                   decoration: InputDecoration(
                     filled: true,
@@ -80,19 +94,22 @@ class _userInfoState extends State<userInfo> {
           Gaps.v24,
           // 나이
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "나이",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: MediaQuery.of(context).size.height * 0.03,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Gaps.h44,
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.425,
                 child: TextField(
-                  controller: _idController,
+                  style: const TextStyle(color: Colors.black),
+                  controller: _ageController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -114,12 +131,14 @@ class _userInfoState extends State<userInfo> {
           ),
           Gaps.v24,
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "성별",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: MediaQuery.of(context).size.height * 0.03,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               Gaps.h44,

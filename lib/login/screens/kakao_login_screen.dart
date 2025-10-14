@@ -3,6 +3,7 @@ import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
 import 'package:hack2025_mobile_app/commons/themes.dart';
 import 'package:hack2025_mobile_app/login/screens/login_screen.dart';
 import 'package:hack2025_mobile_app/login/screens/naver_login_screen.dart';
+import 'package:hack2025_mobile_app/regist/userInfoScreen.dart';
 import 'package:hack2025_mobile_app/widgets/login_container.dart';
 
 class KakaoLoginScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _KakaoLoginScreenState extends State<KakaoLoginScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const NaverLoginScreen(), // 이후 home screen으로 바꾸기
+        builder: (context) => const Userinfoscreen(), // 이후 home screen으로 바꾸기
       ),
     );
     // print("작동 완료!!!!!!!!! $id , $password");
@@ -91,7 +92,7 @@ class _KakaoLoginScreenState extends State<KakaoLoginScreen> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Themes.kakao_text,
                 ),
                 child: Padding(
@@ -102,7 +103,8 @@ class _KakaoLoginScreenState extends State<KakaoLoginScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Themes.naver_text,
-                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                      fontSize: MediaQuery.of(context).size.height * 0.04,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
@@ -114,7 +116,7 @@ class _KakaoLoginScreenState extends State<KakaoLoginScreen> {
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Themes.kakao_text,
                 ),
                 child: Padding(
@@ -125,7 +127,8 @@ class _KakaoLoginScreenState extends State<KakaoLoginScreen> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Themes.naver_text,
-                      fontSize: MediaQuery.of(context).size.height * 0.035,
+                      fontSize: MediaQuery.of(context).size.height * 0.04,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),

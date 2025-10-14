@@ -44,6 +44,7 @@ void _onBackTap() {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: MediaQuery.of(context).size.height * 0.045,
+                    fontWeight: FontWeight.w500,
               ),
             ),
               Gaps.v6,
@@ -51,19 +52,20 @@ void _onBackTap() {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: MediaQuery.of(context).size.height * 0.035,
+                    fontWeight: FontWeight.w500,
               ),
             ),
           ],
         ),
             ),
-          const Userinterests(),
+          const Userinterests(border: 1),
           Gaps.v16,
            GestureDetector(
                 onTap: _onNextTap,
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.85,
                   decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
                     color: Themes.mint,
                   ),
                   child: Padding(
@@ -74,7 +76,8 @@ void _onBackTap() {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Themes.kakao_text,
-                        fontSize: MediaQuery.of(context).size.height * 0.035,
+                    fontSize: MediaQuery.of(context).size.height * 0.04,
+                    fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
@@ -86,7 +89,7 @@ void _onBackTap() {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.85,
                   decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
                     color: Themes.mint,
                   ),
                   child: Padding(
@@ -97,7 +100,8 @@ void _onBackTap() {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Themes.kakao_text,
-                        fontSize: MediaQuery.of(context).size.height * 0.035,
+                    fontSize: MediaQuery.of(context).size.height * 0.04,
+                    fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
