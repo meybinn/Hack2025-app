@@ -76,7 +76,7 @@ class _ShortSentence2State extends State<ShortSentence2> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   BrailleCell(
-                    active: [false, false, false, true, true, true],
+                    active: [false, false, false, true, false, true],
                     onColor: _dotOn,
                     offColor: _dotOff,
                     size: 40,
