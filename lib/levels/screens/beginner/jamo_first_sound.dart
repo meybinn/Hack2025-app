@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hack2025_mobile_app/levels/screens/beginner/intro_jamo_single_consonant.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/intro_jamo_first_sound.dart';
 
 class JamoFirstSound extends StatelessWidget{
   
@@ -43,7 +43,7 @@ class JamoFirstSound extends StatelessWidget{
                         Navigator.push(
                           context, 
                           MaterialPageRoute(
-                            builder: (_) => IntroJamoSingleConsonant(),
+                            builder: (_) => IntroJamoFirstSound(),
                             ),
                             );
                       },

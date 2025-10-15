@@ -8,10 +8,10 @@ class Part1FirstCons2 extends StatefulWidget {
   });
 
   @override
-  State<Part1FirstCons2> createState() => _Part1FirstConsState();
+  State<Part1FirstCons2> createState() => _Part1FirstCons2State();
 }
 
-class _Part1FirstConsState extends State<Part1FirstCons2> {
+class _Part1FirstCons2State extends State<Part1FirstCons2> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
@@ -123,7 +123,7 @@ class _Part1FirstConsState extends State<Part1FirstCons2> {
 
   @override
   void dispose() {
-    _tts.stop(); // jangan _tts.dispose()
+    _tts.stop();
     super.dispose();
   }
 

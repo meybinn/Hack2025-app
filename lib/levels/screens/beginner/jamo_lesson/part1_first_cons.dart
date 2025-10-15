@@ -45,7 +45,7 @@ class _Part1FirstConsState extends State<Part1FirstCons> {
 
   @override
   void dispose() {
-    _tts.stop(); // jangan _tts.dispose()
+    _tts.stop(); 
     super.dispose();
   }
 
