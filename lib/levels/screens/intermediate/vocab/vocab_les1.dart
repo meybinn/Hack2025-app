@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:hack2025_mobile_app/levels/screens/intermediate/abbreviation_lesson/abbreviation_lesson2.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/jamo_lesson/vowel_chain_les3.dart';
+import 'package:hack2025_mobile_app/levels/screens/intermediate/vocab/vocab_les2.dart';
 import 'package:hack2025_mobile_app/levels/widgets/braille_cell.dart';
 
-class AbbreviationLesson1 extends StatefulWidget {
-  const AbbreviationLesson1({
+class VocabLes1 extends StatefulWidget {
+  const VocabLes1({
     super.key,
   });
 
   @override
-  State<AbbreviationLesson1> createState() => _AbbreviationLesson1State();
+  State<VocabLes1> createState() => _VocabLes1State();
 }
 
-class _AbbreviationLesson1State extends State<AbbreviationLesson1> {
+class _VocabLes1State extends State<VocabLes1> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
 
-  static const String _utterance = "가";
+  static const String _utterance = "안녕하세요";
 
   static const Color _text = Color(0xFFFFFF00);
   static const Color _dotOff = Color(0xFF807E7E);
@@ -57,43 +58,33 @@ class _AbbreviationLesson1State extends State<AbbreviationLesson1> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 60,
-              ),
-              const Icon(
-                Icons.volume_up_outlined,
-                color: Color(0xFFFFFF00),
-                size: 70,
-              ),
-              const SizedBox(
-                height: 90,
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  BrailleCell(
-                    active: [true, true, true, false, false, true],
-                    onColor: _dotOn,
-                    offColor: _dotOff,
-                    size: 40,
-                    hgap: 40,
-                    vgap: 30,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 60,
+                ),
+                const Icon(
+                  Icons.volume_up_outlined,
+                  color: Color(0xFFFFFF00),
+                  size: 70,
                   ),
-                  const SizedBox(
-                    width: 70,
+                const SizedBox(
+                  height: 90,
+                ),
+                const SizedBox(
+                    height: 24,
                   ),
-                  Text(
-                    "가",
+                const Text(
+                    "안녕하세요",
                     style: TextStyle(
-                      fontSize: 100,
+                      fontSize: 60,
                       fontWeight: FontWeight.w600,
                       color: _text,
                     ),
                   ),
-                ],
-              ),
               const Spacer(),
               SizedBox(
                 width: 330,
@@ -113,7 +104,7 @@ class _AbbreviationLesson1State extends State<AbbreviationLesson1> {
                     _navigated = true;
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (_) => const AbbreviationLesson2(),
+                        builder: (_) => const VocabLes2(),
                       ),
                     );
                   },
@@ -154,6 +145,7 @@ class _AbbreviationLesson1State extends State<AbbreviationLesson1> {
             ],
           ),
         ),
+      ),
       ),
     );
   }

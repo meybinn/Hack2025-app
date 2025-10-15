@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/intermediate/intro_abbreviation.dart';
 
 class AbbreviationPart extends StatelessWidget{
   
@@ -9,13 +10,13 @@ class AbbreviationPart extends StatelessWidget{
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(22, 40, 22, 0),
                 child: Column(
                   children: const [
                     Text(
-                      "약어를\n배워볼까요?",
+                      "약자를\n배워볼까요?",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color(0xFFFFFF00),
@@ -29,7 +30,6 @@ class AbbreviationPart extends StatelessWidget{
                 ),
               ),
             ),
-            //const SizedBox(height: 50,),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 24,
@@ -38,14 +38,20 @@ class AbbreviationPart extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                     Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const IntroAbbreviation(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w600,
                     ),
@@ -96,7 +102,6 @@ class AbbreviationPart extends StatelessWidget{
               ),
             ),
           const SizedBox(height: 80,),
-
           ],
         ),
       ),

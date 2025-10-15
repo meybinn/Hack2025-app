@@ -50,7 +50,7 @@ class IntermediateLevelScreen extends StatelessWidget{
                 Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (_) => AcronymPart(),
+                    builder: (_) => AbbreviationPart(),
                     ),
                   );
               },
@@ -68,7 +68,7 @@ class IntermediateLevelScreen extends StatelessWidget{
               Navigator.push(
                   context, 
                   MaterialPageRoute(
-                    builder: (_) => AbbreviationPart(),
+                    builder: (_) => AcronymPart(),
                     ),
                   );
             },

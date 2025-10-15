@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:hack2025_mobile_app/levels/screens/intermediate/abbreviation_lesson/abbreviation_lesson1.dart';
+import 'package:hack2025_mobile_app/levels/screens/intermediate/vocab/vocab_les1.dart';
 
-class IntroAbbreviation extends StatefulWidget {
-  const IntroAbbreviation({super.key});
+class IntroVocab extends StatefulWidget {
+  const IntroVocab({super.key});
 
   @override
-  State<IntroAbbreviation> createState() => _IntroAbbreviationState();
+  State<IntroVocab> createState() => _IntroVocabState();
 }
 
-class _IntroAbbreviationState extends State<IntroAbbreviation> {
+class _IntroVocabState extends State<IntroVocab> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
 
   static const _introText =
-      "이번 학습에서는 약자를 배워봅니다. "
-      "약자는 자주 쓰이는 음절이나 낱말을 한 글자로 줄여 표기한 것입니다.";
+      "이번 학습에서는 단어를 배워봅니다. "
+      "단어는 뜻을 가진 가장 작은 언어 단위로, 여러 자모가 모여 만들어집니다.";
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _IntroAbbreviationState extends State<IntroAbbreviation> {
       if (!mounted || _navigated) return;
       _navigated = true;
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const AbbreviationLesson1()),
+        MaterialPageRoute(builder: (_) => const VocabLes1()),
       );
     });
   }
@@ -46,7 +46,7 @@ class _IntroAbbreviationState extends State<IntroAbbreviation> {
       if (!mounted || _navigated) return;
       _navigated = true;
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const AbbreviationLesson1()),
+        MaterialPageRoute(builder: (_) => const VocabLes1()),
       );
     }
   }
@@ -69,7 +69,7 @@ class _IntroAbbreviationState extends State<IntroAbbreviation> {
             const Align(
               alignment: Alignment.center,
               child: Text(
-                "약자",
+                "단어",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: yellow,
@@ -92,7 +92,7 @@ class _IntroAbbreviationState extends State<IntroAbbreviation> {
                           _isSpeaking ? Icons.pause_outlined
                           : Icons.play_arrow,
                       size: 150,
-                      color: Color(0xFFFFFF00)
+                      color: const Color(0xFFFFFF00)
                     ),
                   ),
                 ),

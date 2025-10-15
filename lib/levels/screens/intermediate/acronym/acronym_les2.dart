@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:hack2025_mobile_app/levels/widgets/braille_cell.dart';
 
-class AbbreviationLesson2 extends StatefulWidget {
-  const AbbreviationLesson2({
+class AcronymLes2 extends StatefulWidget {
+  const AcronymLes2({
     super.key,
   });
 
   @override
-  State<AbbreviationLesson2> createState() => _AbbreviationLesson2State();
+  State<AcronymLes2> createState() => _AcronymLes2State();
 }
 
-class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
+class _AcronymLes2State extends State<AcronymLes2> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
 
-  static const String _utterance = "하";
+  static const String _utterance = "그러나";
 
   static const Color _text = Color(0xFFFFFF00);
   static const Color _dotOff = Color(0xFF807E7E);
@@ -121,6 +121,7 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
     );
   }
 
+
   @override
   void dispose() {
     _tts.stop(); 
@@ -129,7 +130,7 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
 
   @override
   Widget build(BuildContext context) {
-
+    
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -148,11 +149,12 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
               const SizedBox(
                 height: 90,
               ),
+              
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   BrailleCell(
-                    active: [false, true, true, true, false, false],
+                    active: [true, false, false, false, false, false],
                     onColor: _dotOn,
                     offColor: _dotOff,
                     size: 40,
@@ -160,18 +162,27 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
                     vgap: 30,
                   ),
                   const SizedBox(
-                    width: 70,
+                    width: 50,
                   ),
-                  Text(
-                    "하",
-                    style: TextStyle(
-                      fontSize: 100,
-                      fontWeight: FontWeight.w600,
-                      color: _text,
-                    ),
+                  BrailleCell(
+                    active: [true, true, false, false, false, false],
+                    onColor: _dotOn,
+                    offColor: _dotOff,
+                    size: 40,
+                    hgap: 40,
+                    vgap: 30,
                   ),
                 ],
               ),
+              const SizedBox(height: 24,),
+              const Text(
+                  "그러나",
+                  style: TextStyle(
+                    fontSize: 80,
+                    fontWeight: FontWeight.w600,
+                    color: _text,
+                  ),
+                ),
               const Spacer(),
               SizedBox(
                 width: 330,

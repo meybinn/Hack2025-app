@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/symbol/symbol_les2.dart';
+import 'package:hack2025_mobile_app/levels/screens/intermediate/vocab/vocab_les5.dart';
 import 'package:hack2025_mobile_app/levels/widgets/braille_cell.dart';
 
-class AbbreviationLesson2 extends StatefulWidget {
-  const AbbreviationLesson2({
+class VocabLes4 extends StatefulWidget {
+  const VocabLes4({
     super.key,
   });
 
   @override
-  State<AbbreviationLesson2> createState() => _AbbreviationLesson2State();
+  State<VocabLes4> createState() => _VocabLes4State();
 }
 
-class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
+class _VocabLes4State extends State<VocabLes4> {
   final FlutterTts _tts = FlutterTts();
   bool _isSpeaking = false;
   bool _navigated = false;
@@ -40,85 +42,6 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
       await _tts.setVolume(1.0);
       await _tts.speak(_utterance);
     } catch (_) {}
-  }
-
-  Future<void> _quizPop() {
-    return showGeneralDialog(
-      context: context,
-      barrierDismissible: true,
-      barrierLabel: "퀴즈",
-      barrierColor: Colors.black.withOpacity(0.6),
-      transitionDuration: const Duration(milliseconds: 180),
-      pageBuilder: (context, anim, secAnim) {
-        return Center(
-          child: Material(
-            color: Colors.transparent,
-            child: Container(
-              width: 330,
-              padding: const EdgeInsets.fromLTRB(
-                28,
-                65,
-                28,
-                28,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.menu_book_rounded,
-                    size: 80,
-                    color: Colors.blue,
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const Text(
-                    "퀴즈 시간",
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  SizedBox(
-                    width: 170,
-                    height: 80,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF75B7B3),
-                        foregroundColor: Colors.black,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        elevation: 0,
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text(
-                        "시작",
-                        style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-    );
   }
 
   @override
@@ -159,19 +82,19 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
                     hgap: 40,
                     vgap: 30,
                   ),
-                  const SizedBox(
-                    width: 70,
+                ],
+              ),
+              const SizedBox(
+                    height: 24,
                   ),
-                  Text(
+              const Text(
                     "하",
                     style: TextStyle(
-                      fontSize: 100,
+                      fontSize: 80,
                       fontWeight: FontWeight.w600,
                       color: _text,
                     ),
                   ),
-                ],
-              ),
               const Spacer(),
               SizedBox(
                 width: 330,
@@ -186,7 +109,15 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
                     ),
                     elevation: 0,
                   ),
-                  onPressed: _quizPop,
+                  onPressed: () {
+                    if (_navigated) return;
+                    _navigated = true;
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const VocabLes5(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     '다음',
                     style: TextStyle(
@@ -202,7 +133,7 @@ class _AbbreviationLesson2State extends State<AbbreviationLesson2> {
                 height: 100,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF8DBCB8),
+                    backgroundColor: const Color(0xFF75B7B3),
                     foregroundColor: Colors.black,
                     padding: const EdgeInsets.symmetric(vertical: 18),
                     shape: RoundedRectangleBorder(
