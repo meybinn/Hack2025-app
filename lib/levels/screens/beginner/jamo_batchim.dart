@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/intro_batchim.dart';
 
 class JamoBatchim extends StatelessWidget{
   
@@ -38,7 +39,14 @@ class JamoBatchim extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(
+                          context, 
+                          MaterialPageRoute(
+                            builder: (_) => const IntroBatchim(),
+                            ),
+                            );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,

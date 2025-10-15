@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack2025_mobile_app/home/screens/home_screen.dart';
-import 'package:hack2025_mobile_app/levels/screens/beginner/intro_jamo_single_consonant.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/intro_jamo_first_sound.dart';
 import 'package:hack2025_mobile_app/levels/screens/beginner/jamo_first_sound.dart';
 import 'package:hack2025_mobile_app/levels/screens/beginner/jamo_lesson/part1_first_cons.dart';
 import 'package:hack2025_mobile_app/levels/screens/beginner/jamo_lesson/part1_first_cons2.dart';
@@ -25,10 +25,10 @@ class Readable extends StatelessWidget {
       ),
       title: 'My App',
       //home: const LoginScreen(),
-      //home: const HomeScreen(),
+      home: const HomeScreen(),
       //home: const Part1FirstCons2(),
       //home:  const BrailleCell(),
-      home:  const LevelScreen(),
+      //home:  const LevelScreen(),
 
     );
   }
