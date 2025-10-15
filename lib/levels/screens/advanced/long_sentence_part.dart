@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/advanced/intro_long_sent.dart';
 
 class LongSentencePart extends StatelessWidget{
   
@@ -9,7 +10,7 @@ class LongSentencePart extends StatelessWidget{
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(22, 40, 22, 0),
                 child: Column(
@@ -29,7 +30,6 @@ class LongSentencePart extends StatelessWidget{
                 ),
               ),
             ),
-            //const SizedBox(height: 50,),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 24,
@@ -38,7 +38,13 @@ class LongSentencePart extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const IntroLongSent()
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,

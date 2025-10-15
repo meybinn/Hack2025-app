@@ -62,7 +62,7 @@ class AdvancedLevelScreen extends StatelessWidget {
               ),
 
             MenuButton(
-              label: '문장',
+              label: '장문',
               background: color,
               foreground: Colors.black,
             onPressed: () {
