@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/intro_number.dart';
+import 'package:hack2025_mobile_app/levels/screens/beginner/number/number_les1.dart';
 
 class NumberLesson extends StatelessWidget{
   
@@ -9,7 +11,7 @@ class NumberLesson extends StatelessWidget{
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.fromLTRB(22, 40, 22, 0),
                 child: Column(
@@ -38,14 +40,21 @@ class NumberLesson extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(
+                        context, 
+                        MaterialPageRoute(
+                          builder: (_) => const IntroNumber(),
+                          ),
+                        );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.w600,
                     ),
