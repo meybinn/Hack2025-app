@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/levels/screens/advanced/intro_short_sent.dart';
 
 class ShortSentencePart extends StatelessWidget{
   
@@ -38,7 +39,13 @@ class ShortSentencePart extends StatelessWidget{
                 height: 90,
                 width: 300,
                 child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const IntroShortSent()
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
