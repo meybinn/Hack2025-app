@@ -66,7 +66,7 @@ class LevelScreen extends StatelessWidget{
               titleEn: 'Advanced', 
               bullets: [
                 '단문',
-                '문장',
+                '장문',
               ],
               onTap: () {
                 Navigator.push(
