@@ -4,6 +4,7 @@ import 'package:hack2025_mobile_app/commons/themes.dart';
 import 'package:hack2025_mobile_app/login/screens/login_screen.dart';
 import 'package:hack2025_mobile_app/login/screens/naver_login_screen.dart';
 import 'package:hack2025_mobile_app/login/widgets/login_container.dart';
+import 'package:hack2025_mobile_app/regist/userInfoScreen.dart';
 
 class KakaoLoginScreen extends StatefulWidget {
   const KakaoLoginScreen({super.key});
@@ -48,7 +49,7 @@ class _KakaoLoginScreenState extends State<KakaoLoginScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const NaverLoginScreen(), // 이후 home screen으로 바꾸기
+        builder: (context) => const Userinfoscreen(), // 이후 home screen으로 바꾸기
       ),
     );
     // print("작동 완료!!!!!!!!! $id , $password");

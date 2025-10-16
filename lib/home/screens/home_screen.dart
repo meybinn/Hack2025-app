@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
+import 'package:hack2025_mobile_app/comunity/community_screen.dart';
 import 'package:hack2025_mobile_app/home/widgets/connected_button.dart';
 import 'package:hack2025_mobile_app/home/widgets/home_card.dart';
 import 'package:hack2025_mobile_app/home/widgets/progress_bar.dart';
+import 'package:hack2025_mobile_app/level_test/levelTest_screen.dart';
 import 'package:hack2025_mobile_app/levels/screens/level_screen.dart';
+import 'package:hack2025_mobile_app/settings/screen/settingScreen.dart';
 
 class HomeScreen extends StatelessWidget{
   
@@ -35,9 +38,9 @@ class HomeScreen extends StatelessWidget{
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-                ProgressBar(
+              const ProgressBar(
                   value: 0.05,
                   height: 18,
                   bgColor: Colors.white,
@@ -59,7 +62,7 @@ class HomeScreen extends StatelessWidget{
                   shrinkWrap: true,
                   crossAxisSpacing: 30,     //for setting space of the side grid card
                   mainAxisSpacing: 55,      //for setting space between mid-space of grid card
-                  physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                     children: [
                       HomeCard(
                         title: '학습 시작', 
@@ -77,21 +80,44 @@ class HomeScreen extends StatelessWidget{
                               );
                           }, 
                         ),
-                      const HomeCard(
+                  HomeCard(
                         title: '레벨 테스트', 
                         iconAsset: 'assets/images/pencil_icon.png',
                         iconSize: 0.28,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const LeveltestScreen(),
                         ),
-                      const HomeCard(
+                      );
+                    },
+                  ),
+                  HomeCard(
                         title: '커뮤니티', 
                         iconAsset: 'assets/images/community_icon.png',
                         iconSize: 0.28,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const CommunityScreen(),
                         ),
-                      const HomeCard(
+                      );
+                    },
+                  ),
+                  HomeCard(
                         title: '설정', 
                         iconAsset: 'assets/images/setting_icon.png',
                         iconSize: 0.28,
-
+onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const Settingscreen(),
+                        ),
+                      );
+                    }, 
                         ),
                       ],
                     ),
