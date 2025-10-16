@@ -4,6 +4,7 @@ import 'package:hack2025_mobile_app/commons/constant/gaps.dart';
 import 'package:hack2025_mobile_app/commons/constant/sizes.dart';
 import 'package:hack2025_mobile_app/commons/themes.dart';
 import 'package:hack2025_mobile_app/home/screens/home_screen.dart';
+import 'package:hack2025_mobile_app/level_test/levelTest_screen.dart';
 import 'package:hack2025_mobile_app/widgets/checkBox.dart';
 import 'package:hack2025_mobile_app/widgets/userInterests.dart';
 
@@ -20,7 +21,7 @@ class _UserinterestscreenState extends State<Userinterestscreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const HomeScreen(), 
+        builder: (context) => const LeveltestScreen(), 
       ),
     );
   }

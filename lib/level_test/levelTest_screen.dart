@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack2025_mobile_app/home/screens/home_screen.dart';
 import 'package:hack2025_mobile_app/levels/screens/advanced/advanced_level_screen.dart';
 import 'package:hack2025_mobile_app/levels/screens/beginner/beginner_level_screen.dart';
 import 'package:hack2025_mobile_app/levels/screens/intermediate/intermediate_level_screen.dart';
@@ -255,6 +256,39 @@ class _LeveltestScreenState extends State<LeveltestScreen> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF75B7B3),
+                foregroundColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              child: Container(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '홈 화면으로',
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
               onPressed: () => Navigator.pop(context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF75B7B3),
@@ -273,7 +307,7 @@ class _LeveltestScreenState extends State<LeveltestScreen> {
                       size: 50,
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 20,
                     ),
                     Text(
                       '돌아가기',
